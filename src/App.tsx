@@ -1,4 +1,5 @@
 import React from 'react';
+import './App.css';
 // library
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 // common
@@ -9,13 +10,15 @@ import Top from './components/pages/Top';
 
 function App() {
   return (
-    <BrowserRouter>
-      <ReducerProvider>
-        <Switch>
-          <Route exact path={RouteName.ROOT} component={Top} />
-        </Switch>
-      </ReducerProvider>
-    </BrowserRouter>
+    <div className="App">
+      <BrowserRouter>
+        <ReducerProvider>
+          <Switch>
+            <Route exact path={RouteName.ROOT} component={Top} />
+          </Switch>
+        </ReducerProvider>
+      </BrowserRouter>
+    </div>
   );
 }
 

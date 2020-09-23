@@ -1,5 +1,5 @@
 import React from 'react';
-import InitialCard from './../molecules/InitialCard'
+import InitialCard from './../molecules/InitialCard';
 
 const Top: React.FC = (props: any) => {
   return (
