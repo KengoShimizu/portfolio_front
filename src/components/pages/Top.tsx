@@ -1,9 +1,9 @@
 import React from 'react';
-import InitialCard from './../molecules/InitialCard';
+import ProfileCard from '../organisms/ProfileCard';
 
 const Top: React.FC = (props: any) => {
   return (
-    <InitialCard />
+    <ProfileCard />
   );
 }
 

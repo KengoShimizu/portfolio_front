@@ -4,7 +4,6 @@ import CommonStyle from './../../common/CommonStyle';
 
 interface ImageProps {
   theme?: ImageThemes[];
-  style?: string;
   src: string;
   height: number;
   width: number;
@@ -13,23 +12,18 @@ interface ImageProps {
 
 export enum ImageThemes {
   MYSELF = 'MYSELF',
-  CUSTOM = 'CUSTOM',
 }
 
 enum ModifierClassNames {
   MYSELF = 'image-myself',
-  CUSTOM = 'image-style',
 }
 
-const Image: React.FC<ImageProps> = ({ theme = [], style, src, height, width, alt }) => {
-  const modifierClasses = theme.map(data => ModifierClassNames[data]).join(' ');
+const Image: React.FC<ImageProps> = ({ theme = [], src, height, width, alt }) => {
+  const modifierClassesWrap = theme.map(data => ModifierClassNames[data]).join(' ');
   return (
-    <p className={modifierClasses}>
+    <p className={modifierClassesWrap}>
       <img src={src} height={height} width={width} alt={alt}/>
       <style jsx>{`
-        .image-style{
-          ${style}
-        }
       `}</style>
     </p>
   );

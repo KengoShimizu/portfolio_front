@@ -1,4 +1,4 @@
-import React, { useState, useContext, createContext, useReducer } from 'react';
+import React, { createContext, useReducer } from 'react';
 // common
 import { Reducer, StateType, ActionType } from './Reducer';
 

@@ -9,7 +9,7 @@ export type ActionType = {
 
 export const Reducer = (state: StateType, action: ActionType) => {
   switch (action.type) {
-    case 'setId':
+    case 'initial_anime':
       return { ...state, initial_animation: action.initial_animation };
     default:
       return state;

@@ -1,6 +1,7 @@
 const CommonStyle = {
   // 色
   BorderGray: '#8C8C8C',
+  TextGray: '#B7B7B7',
   // フォントサイズ 
   Title: '24px',
   SubTitle: '18px',
