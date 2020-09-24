@@ -21,7 +21,7 @@ a{
   background:transparent;
 }
 h1,h2,h3,h4,p,caption{
-  color: #333;
+  color:#4A4A4A;
   font-family: "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif; 
 }
 body {
@@ -53,13 +53,13 @@ a {
 
 ins {
   background-color:#ff9;
-  color:#000;
+  color:#4A4A4A;
   text-decoration:none;
 }
 
 mark {
   background-color:#ff9;
-  color:#333;
+  color:#4A4A4A;
   font-style:italic;
   font-weight:bold;
 }

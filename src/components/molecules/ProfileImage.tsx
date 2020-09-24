@@ -1,40 +1,22 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React from 'react';
 import CommonStyle from '../../common/CommonStyle';
-import { ReducerContext } from './../../common/ReducerContext';
 
+interface ProfileImageProps {
+  anime: boolean;
+  initial_animation?: boolean;
+  anime_duration: number;
+  anime_delay: number;
+  second_anime?: boolean;
+}
 
-const ProfileImage: React.FC = () => {
-  const [anime, setAnime] = useState(false);
-  const { state, dispatch } = useContext(ReducerContext);
-  const anime_duration = 1;
-  const anime_delay = 1;
-
+const ProfileImage: React.FC<ProfileImageProps> = ({ anime, initial_animation, anime_duration, anime_delay, second_anime }) => {
   const transform_rotateY = (deg: number) => `
     transform: rotateY(${deg}deg);
     -webkit- transform: rotateY(${deg}deg);`;
 
-  useEffect(() => {
-    setAnime(true);
-    setTimeout(() => {
-      dispatch({
-        type: 'initial_anime',
-        initial_animation: true
-      })
-    }, (anime_duration + anime_delay + 0.3) * 1000);
-  }, [])
-
   return (
     <>
-      <p className={`illust-image_wrap ${state.initial_animation && 'image_wrap_anime'}`}>
-        <img
-          src='./myself_illust_400px.png'
-          height='200'
-          width='200'
-          alt='myself'
-          className={anime ? 'illust-image' : ''}
-        />
-      </p>
-      <p className={`photo-image_wrap ${state.initial_animation && 'image_wrap_anime'}`}>
+      <p className={`photo-image_wrap ${initial_animation && 'image_wrap_anime'} ${second_anime && 'image_hover'}`}>
         <img
           src='./myself_400px.png'
           height='200'
@@ -43,14 +25,26 @@ const ProfileImage: React.FC = () => {
           className={anime ? 'photo-image' : ''}
         />
       </p>
+      <p className={`illust-image_wrap ${initial_animation && 'image_wrap_anime'}`}>
+        <img
+          src='./myself_illust_400px.png'
+          height='200'
+          width='200'
+          alt='myself'
+          className={anime ? 'illust-image' : ''}
+        />
+      </p>
       <style jsx>{`
+          .photo-image_wrap{
+            z-index: 100;
+          }
           .photo-image_wrap,
           .illust-image_wrap{
             position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            transition: .5s;
+            top: 30%;
+            left: 45%;
+            transform: translate(-30%, -45%);
+            transition: ${CommonStyle.Transition};
           }
           .photo-image,
           .illust-image{
@@ -92,7 +86,19 @@ const ProfileImage: React.FC = () => {
           }
           .image_wrap_anime{
             top: 100px;
-            left: calc(100px + 10%);
+            left: calc(100px + 15%);
+          }
+          .image_hover .photo-image,
+          .image_hover + .illust-image_wrap .illust-image{
+            transition: ${CommonStyle.Transition};
+          }
+          .image_hover:hover .photo-image{
+            transition: ${CommonStyle.Transition};
+            ${transform_rotateY(180)}
+          }
+          .image_hover:hover + .illust-image_wrap .illust-image{
+            transition: ${CommonStyle.Transition};
+            ${transform_rotateY(0)}
           }
         `}</style>
     </>

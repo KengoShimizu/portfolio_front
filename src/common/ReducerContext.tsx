@@ -8,7 +8,9 @@ type ContextType = {
 };
 
 const initialState = { 
-  initial_animation: false 
+  initial_animation: false,
+  selected_menu: 1,
+  second_anime: false,
 };
 
 export const ReducerContext = createContext({} as ContextType);
