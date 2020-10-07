@@ -14,15 +14,24 @@ const ProfileText: React.FC<ProfileTextProps> = ({ second_anime, old }) => {
       <div className={`profile-text-wrap ${second_anime && 'anime'}`}>
         <Title theme={[TitleThemes.PROFILE_NAME]}>清水 謙吾</Title>
         <div className='profile-text-occupation'>
-          <Text theme={[TextThemes.OCCUPATION_HEAD]}>職業</Text>
-          <Text theme={[TextThemes.OCCUPATION]}>学生Webエンジニア</Text>
+          <Text
+            theme={[TextThemes.CUSTOM]}
+            style={`
+              padding: 0 1em;
+              border-right: 1px solid ${CommonStyle.Menu};
+            `}
+          >職業</Text>
+          <Text
+            theme={[TextThemes.CUSTOM]}
+            style={`padding-left: 1em;`}
+          >学生Webエンジニア</Text>
         </div>
         <Text theme={[TextThemes.MB52]}>京都府出身 / 神戸大学出身 / {old}才</Text>
         <Text theme={[TextThemes.LH2EM]}>
-          神戸大学院2年の清水謙吾です．<br/>
-          大学院1年時に研究留学として，<br/>
-          カナダのBlock大学に1年間在籍．<br/>
-          独学で始めたweb開発で現在までに<br/>
+          神戸大学院2年の清水謙吾です．<br />
+          大学院1年時に研究留学として，<br />
+          カナダのBlock大学に1年間在籍．<br />
+          独学で始めたweb開発で現在までに<br />
           複数のサービスを開発．
         </Text>
       </div>

@@ -9,13 +9,9 @@ const CommonStyle = {
   Selected: '#C4C4C4',
   TextWhite: '#F0F0F0',
   // フォントサイズ 
-  TextBigFS: '32px',
-  Title: '24px',
-  SubTitle: '18px',
-  Text: '16px',
-  Caption: '14px',
-  Smallest: '12px',
-  IconCaption: '8px',
+  TextLarge: '32px',
+  TextMiddle: '16px',
+  TextSmall: '12px',
   // snsカラー
   TwitterColor: '#91C4F3',
   GoogleColor: '#D8503F',

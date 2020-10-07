@@ -1,5 +1,6 @@
 import React from 'react';
 import CommonStyle from '../../common/CommonStyle';
+import Text, { TextThemes } from './../atoms/Text';
 
 interface SkillCircleProps {
   svg: any;
@@ -13,8 +14,19 @@ const SkillCircle: React.FC<SkillCircleProps> = ({ svg, level }) => {
         <div className="skill-inner-circle">
           {svg}
         </div>
+        <Text
+          theme={[
+            TextThemes.CENTER,
+            TextThemes.CUSTOM
+          ]}
+          style={`
+            margin: 10px;
+          `}
+        >
+          <span className="level-text">Level </span>{level}
+        </Text>
       </div>
-      
+
       <style jsx>{`
         .skill-out-circle{
           position: relative;
@@ -34,7 +46,7 @@ const SkillCircle: React.FC<SkillCircleProps> = ({ svg, level }) => {
           background-color: inherit;
           transform-origin: left;
           background: ${level < 6 ? CommonStyle.TextWhite : CommonStyle.TextGray};
-          transform: rotate(${level < 6 ? (level*36) + 'deg' : ((level%6)*36+36) + 'deg'});
+          transform: rotate(${level < 6 ? (level * 36) + 'deg' : ((level % 6) * 36 + 36) + 'deg'});
         }
         .skill-inner-circle{
           position: absolute;
@@ -48,6 +60,10 @@ const SkillCircle: React.FC<SkillCircleProps> = ({ svg, level }) => {
           text-align: center;
           line-height: 120px;
           background: ${CommonStyle.BGWhite};
+        }
+        .level-text{
+          font-size: 16px;
+          color: ${CommonStyle.TextGray}
         }
       `}</style>
     </>

@@ -24,7 +24,7 @@ const Title: React.FC<TitleProps> = ({ theme = [], children }) => {
         {`
           .profile-name_title{
             font-weight: 300;
-            font-size: ${CommonStyle.TextBigFS};
+            font-size: ${CommonStyle.TextLarge};
           }
         `}
       </style>
