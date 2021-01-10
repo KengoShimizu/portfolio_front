@@ -10,18 +10,17 @@ interface ButtonProps {
 }
 
 export enum ButtonThemes {
-  INIT = 'INIT',
+  DISABLE = 'DISABLE',
 }
 
 enum ModifierClassNames {
-  INIT = 'button-init',
+  DISABLE = 'button-disable',
 }
 
 
 const Button: React.FC<ButtonProps> = ({ theme = [], children, style = {}, onClick }) => {
   const modifierClasses = theme.map(data => ModifierClassNames[data]).join(' ');
   return (
-    //style={propStyle}style直書き
     <button className={["button", modifierClasses].join(' ')} style={style} onClick={onClick}>
       {children}
       <style jsx>
@@ -31,6 +30,14 @@ const Button: React.FC<ButtonProps> = ({ theme = [], children, style = {}, onCli
             display: flex;
             justify-content: center;
             align-items: center;
+          }
+          .button-disable{
+            margin: 0 auto;
+            width: 100%;
+            color: ${CommonStyle.TextWhite};
+            background-color: ${CommonStyle.TextGray};
+            padding: 12px;
+            border-radius: 5px;
           }
         `}
       </style>

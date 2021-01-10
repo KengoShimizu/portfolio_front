@@ -12,8 +12,8 @@ const Skills: React.FC<SkillsProps> = ({ skills }) => {
   const markup = skills.filter((data: any) => data.kind === 1)
   const frontend = skills.filter((data: any) => data.kind === 2)
   const backend = skills.filter((data: any) => data.kind === 3)
-  const language = skills.filter((data: any) => data.kind === 4)
-  const other = skills.filter((data: any) => data.kind === 5)
+  const infrastructure = skills.filter((data: any) => data.kind === 4)
+  const others = skills.filter((data: any) => data.kind === 5)
 
   const skill_head_custom_text = `
     text-align: center;
@@ -65,30 +65,31 @@ const Skills: React.FC<SkillsProps> = ({ skills }) => {
         </div>
 
         <div className="skills">
-          <Text theme={[TextThemes.CUSTOM]} style={skill_head_custom_text}>Language</Text>
+          <Text theme={[TextThemes.CUSTOM]} style={skill_head_custom_text}>Infrastructure</Text>
           <div className="grid-wrap">
-            {language.map((data: any, i: number) =>
+            {others.map((data: any, i: number) =>
               <SkillCircle
                 svg={<img src={data.image} width={52} alt={data.name} />}
                 level={data.level}
-                key={`language${i}`}
+                key={`others${i}`}
               />
             )}
           </div>
         </div>
 
         <div className="skills">
-          <Text theme={[TextThemes.CUSTOM]} style={skill_head_custom_text}>Other</Text>
+          <Text theme={[TextThemes.CUSTOM]} style={skill_head_custom_text}>Others</Text>
           <div className="grid-wrap">
-            {other.map((data: any, i: number) =>
+            {infrastructure.map((data: any, i: number) =>
               <SkillCircle
                 svg={<img src={data.image} width={52} alt={data.name} />}
                 level={data.level}
-                key={`other${i}`}
+                key={`infrastructure${i}`}
               />
             )}
           </div>
         </div>
+
       </div>
       <style jsx>{`
       .skills-wrapper{

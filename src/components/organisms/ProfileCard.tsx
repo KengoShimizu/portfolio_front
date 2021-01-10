@@ -3,6 +3,7 @@ import ProfileImage from '../molecules/ProfileImage';
 import ProfileText from '../molecules/ProfileText';
 import { ReducerContext } from './../../common/ReducerContext';
 import { CalcOld } from './../../common/Function';
+import SnsBar from '../molecules/SnsBar';
 
 const ProfileCard: React.FC = (props: any) => {
   const { state, dispatch } = useContext(ReducerContext);
@@ -42,6 +43,7 @@ const ProfileCard: React.FC = (props: any) => {
             anime_delay={anime_delay}
             second_anime={state.second_anime}
           />
+          <SnsBar second_anime={state.second_anime}/>
         <div className="profile-card-text">
           <ProfileText second_anime={state.second_anime} old={old}/>
         </div>
@@ -55,7 +57,7 @@ const ProfileCard: React.FC = (props: any) => {
           margin-top: 15vh;
         }
         .profile-card-text{
-          margin-left: calc(250px + 25%);
+          margin-left: calc(200px + 25%);
         }
       `}</style>
     </>

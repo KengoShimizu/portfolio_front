@@ -12,8 +12,8 @@ const Works: React.FC<WorksProps> = ({ works }) => {
   return (
     <>
       <div className="works-wrapper">
-        {works.map((data: any) => 
-          <WorkCard work={data}/> 
+        {works.map((data: any, i: number) => 
+          <WorkCard work={data} key={i+"workcard"}/> 
         )}
       </div>
       <style jsx>{`

@@ -5,6 +5,7 @@ import { ReducerContext } from './../../common/ReducerContext';
 import CommonStyle from '../../common/CommonStyle';
 import Skills from './../organisms/Skills';
 import Works from './../organisms/Works';
+import Contact from './../organisms/Contact';
 import Skill from './../../types/Skill';
 import Work from './../../types/Work';
 
@@ -56,6 +57,9 @@ const Top: React.FC = (props: any) => {
       </div>
       <div className={`common ${state.selected_menu === 3 ? 'appear' : 'disappear'}`}>
         <Works works={works} />
+      </div>
+      <div className={`common ${state.selected_menu === 4 ? 'appear' : 'disappear'}`}>
+        <Contact />
       </div>
       <style jsx>{`
         .initial-preventer{

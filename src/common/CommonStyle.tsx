@@ -10,6 +10,7 @@ const CommonStyle = {
   TextWhite: '#F0F0F0',
   // フォントサイズ 
   TextLarge: '32px',
+  TextMiddleLarge: '24px',
   TextMiddle: '16px',
   TextSmall: '12px',
   // snsカラー

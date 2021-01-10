@@ -86,7 +86,7 @@ const ProfileImage: React.FC<ProfileImageProps> = ({ anime, initial_animation, a
           }
           .image_wrap_anime{
             top: 100px;
-            left: calc(100px + 15%);
+            left: calc(50px + 15%);
           }
           .image_hover .photo-image,
           .image_hover + .illust-image_wrap .illust-image{

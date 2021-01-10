@@ -28,11 +28,7 @@ const ProfileText: React.FC<ProfileTextProps> = ({ second_anime, old }) => {
         </div>
         <Text theme={[TextThemes.MB52]}>京都府出身 / 神戸大学出身 / {old}才</Text>
         <Text theme={[TextThemes.LH2EM]}>
-          神戸大学院2年の清水謙吾です．<br />
-          大学院1年時に研究留学として，<br />
-          カナダのBlock大学に1年間在籍．<br />
-          独学で始めたweb開発で現在までに<br />
-          複数のサービスを開発．
+          某通信会社SEの清水謙吾です。web開発との出会いは、大学院1年時のカナダ・Block大学での1年間研究留学でした。独学で始めたweb開発で現在までに複数のサービスを開発しています。掲載許可を得ていないサービスやその他制作物についてはこちらには掲載していません。
         </Text>
       </div>
       <style jsx>{`

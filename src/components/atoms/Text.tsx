@@ -13,6 +13,7 @@ export enum TextThemes {
   MENU_ITEM = 'MENU_ITEM',
   MENU_ITEM_SELECT = 'MENU_ITEM_SELECT',
   MB52 = 'MB52',
+  MT20 = 'MT20',
   LH2EM = 'LH2EM',
   CENTER = 'CENTER',
   CUSTOM = 'CUSTOM',
@@ -24,6 +25,7 @@ enum ModifierClassNames {
   MENU_ITEM = 'text_menu-item',
   MENU_ITEM_SELECT = 'text_menu-item-selected',
   MB52 = 'mb52',
+  MT20 = 'mt20',
   LH2EM = 'line-height-2em',
   CENTER = 'text_align-center',
   CUSTOM = 'text_custom',
@@ -52,6 +54,9 @@ const Text: React.FC<TextProps> = ({ theme = [], children, style = '' }) => {
           .mb52{
             margin-bottom: 52px;
           }
+          .mt20{
+            margin-top: 20px;
+          }
           .line-height-2em{
             line-height: 2em;
           }
@@ -73,8 +78,9 @@ const Text: React.FC<TextProps> = ({ theme = [], children, style = '' }) => {
           .text_tag{
             position: relative;
             display: inline-block;
-            height: 30px;
-            line-height: 30px;
+            height: 22px;
+            line-height: 22px;
+            margin: 8px 0 16px 16px;
             padding: 0 1em;
             background-color: #3498db;
             border-radius: 0 3px 3px 0;
@@ -87,13 +93,13 @@ const Text: React.FC<TextProps> = ({ theme = [], children, style = '' }) => {
           .text_tag::before{
             position: absolute;
             top: 0;
-            left: -15px;
+            left: -11px;
             content: '';
             width: 0;
             height: 0;
             border-color: transparent #3498db transparent transparent;
             border-style: solid;
-            border-width: 15px 15px 15px 0;
+            border-width: 11px 11px 11px 0;
             -webkit-transition: .2s;
             transition: .2s;
           }
