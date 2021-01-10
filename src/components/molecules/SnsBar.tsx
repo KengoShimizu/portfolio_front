@@ -22,11 +22,17 @@ const SnsBar: React.FC<SnsBarProps> = ({ second_anime }) => {
           display: flex;
           width: 200px;
           justify-content: space-around;
-          left: 15%;
+          left: 24%;
           transition: ${CommonStyle.Transition};
         }
         .anime{
           opacity: 1;
+        }
+        /* ipad - pc */
+        @media screen and (min-width: 768px) {
+          .sns-bar{
+            left: 15%;
+          }
         }
       `}</style>
     </>

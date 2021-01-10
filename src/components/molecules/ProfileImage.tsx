@@ -41,9 +41,9 @@ const ProfileImage: React.FC<ProfileImageProps> = ({ anime, initial_animation, a
           .photo-image_wrap,
           .illust-image_wrap{
             position: absolute;
-            top: 30%;
-            left: 45%;
-            transform: translate(-30%, -45%);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
             transition: ${CommonStyle.Transition};
           }
           .photo-image,
@@ -85,8 +85,7 @@ const ProfileImage: React.FC<ProfileImageProps> = ({ anime, initial_animation, a
             }
           }
           .image_wrap_anime{
-            top: 100px;
-            left: calc(50px + 15%);
+            top: 136px;
           }
           .image_hover .photo-image,
           .image_hover + .illust-image_wrap .illust-image{
@@ -99,6 +98,19 @@ const ProfileImage: React.FC<ProfileImageProps> = ({ anime, initial_animation, a
           .image_hover:hover + .illust-image_wrap .illust-image{
             transition: ${CommonStyle.Transition};
             ${transform_rotateY(0)}
+          }
+          /* ipad - pc */
+          @media screen and (min-width: 768px) {
+            .photo-image_wrap,
+            .illust-image_wrap{
+              top: 30%;
+              left: 45%;
+              transform: translate(-30%, -45%);
+            }
+            .image_wrap_anime{
+              top: 100px;
+              left: calc(50px + 15%);
+            }
           }
         `}</style>
     </>

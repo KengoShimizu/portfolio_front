@@ -22,9 +22,21 @@ const Skills: React.FC<SkillsProps> = ({ skills }) => {
     font-size: ${CommonStyle.TextLarge};
   `;
 
+  const section_title = `
+    font-size: ${CommonStyle.TextLarge};
+    padding: 20px;
+    ${window.innerWidth < 768 ? 'display: block;' : 'display: none;'}
+  `;
+
   return (
     <>
       <div className="skills-wrapper">
+        <Text 
+          theme={[TextThemes.CUSTOM, TextThemes.BOLD]}
+          style={section_title}>
+          Skills
+        </Text>
+
         <div className="skills">
           <Text theme={[TextThemes.CUSTOM]} style={skill_head_custom_text}>Markup</Text>
           <div className="grid-wrap">
@@ -100,9 +112,15 @@ const Skills: React.FC<SkillsProps> = ({ skills }) => {
       }
       .grid-wrap {
         display: grid;
-        grid-template-columns: 150px 150px 150px 150px 150px;
+        grid-template-columns: 150px 150px;
         grid-row-gap: 52px;
         justify-content: center;
+      }
+      /* ipad - pc */
+      @media screen and (min-width: 768px) {
+        .grid-wrap {
+          grid-template-columns: 150px 150px 150px 150px 150px;
+        }
       }
       `}</style>
     </>

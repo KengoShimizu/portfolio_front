@@ -50,14 +50,24 @@ const ProfileCard: React.FC = (props: any) => {
       </div>
       <style jsx>{`
         .profile-card-container{
-          position: relative;
-          max-width: 1000px;
-          min-height: 200px;
-          margin: 0 auto;
-          margin-top: 15vh;
+
         }
         .profile-card-text{
-          margin-left: calc(200px + 25%);
+          padding-top: 21em;
+        }
+        /* ipad - pc */
+        @media screen and (min-width: 768px) {
+          .profile-card-container{
+            position: relative;
+            max-width: 1000px;
+            min-height: 200px;
+            margin: 0 auto;
+            margin-top: 15vh;
+          }
+          .profile-card-text{
+            margin-left: calc(200px + 25%);
+            padding-top: 0;
+          }
         }
       `}</style>
     </>

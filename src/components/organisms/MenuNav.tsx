@@ -1,23 +1,32 @@
-import React, { useContext } from 'react';
+import React, { useState, useContext } from 'react';
 import MenuItem from './../molecules/MenuItem';
 import CommonStyle from './../../common/CommonStyle';
-import { useState } from 'react';
 import { ReducerContext } from '../../common/ReducerContext';
+import { Menu } from 'react-feather';
 
 const MenuNav: React.FC = () => {
   const { state, dispatch } = useContext(ReducerContext);
+  const [ hamburger, setHamburger ] = useState(false);
 
   const handleMenuClick = (menu_item: number) => {
     dispatch({
       type: 'menu_select',
       selected_menu: menu_item
     })
+    setHamburger(false);
+  }
+
+  const handleHamburger = () => {
+    setHamburger(true);
   }
 
   return (
     <>
       <div className='hidden-block'/>
-      <nav className={`navigarion-wrap ${state.second_anime && 'anime'}`}>
+      <div className={`hamburger ${state.second_anime && 'hamburger-anime'}`} onClick={handleHamburger}>
+        <Menu size={36}/>
+      </div>
+      <nav className={`navigarion-wrap ${state.second_anime && 'anime'} ${hamburger && 'hamburger-open'}`}>
         <ul className='navigarion_ul'>
           <li onClick={() => handleMenuClick(1)}>
             <MenuItem content='about' isSelected={state.selected_menu === 1} />
@@ -34,6 +43,31 @@ const MenuNav: React.FC = () => {
         </ul>
       </nav>
       <style jsx>{`
+        .hamburger{
+          position: absolute;
+          right: 8px;
+          top: -50px;
+          transition: ${CommonStyle.Transition};
+        }
+        .hamburger-anime{
+          top: 8px;
+        }
+        .navigarion-wrap{
+          position: absolute;
+          z-index: 1500;
+          height: 100%;
+          right: -170px;
+          background-color: ${CommonStyle.Menu};
+          transition: ${CommonStyle.Transition};
+        }
+        .hamburger-open{
+          right: 0;
+        }
+        /* ipad - pc */
+        @media screen and (min-width: 768px) {
+          .hamburger{
+            display: none;
+          }
           .hidden-block{
             width: 100%;
             height: 112px;
@@ -41,6 +75,7 @@ const MenuNav: React.FC = () => {
           .navigarion-wrap{
             position: absolute;
             top: -200px;
+            right: 0;
             width: 100%;
             height: auto;
             background-color: ${CommonStyle.Menu};
@@ -55,7 +90,8 @@ const MenuNav: React.FC = () => {
           .navigarion_ul li{
             cursor: pointer;
           }
-        `}</style>
+        }
+      `}</style>
     </>
   );
 }

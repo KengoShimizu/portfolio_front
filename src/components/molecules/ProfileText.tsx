@@ -33,8 +33,10 @@ const ProfileText: React.FC<ProfileTextProps> = ({ second_anime, old }) => {
       </div>
       <style jsx>{`
         .profile-text-wrap{
+          text-align: center;
           padding-top: 1em;
           opacity: 0;
+          margin: 0 10px;
           transition: ${CommonStyle.Transition};
         }
         .anime{
@@ -43,7 +45,7 @@ const ProfileText: React.FC<ProfileTextProps> = ({ second_anime, old }) => {
         .profile-text-occupation{
           display: flex;
           max-width: 360px;
-          margin: 24px 0;
+          margin: 24px auto;
           padding: 20px 12px;
           border-radius: 4px;
           background-color: ${CommonStyle.BGGray};
@@ -59,6 +61,16 @@ const ProfileText: React.FC<ProfileTextProps> = ({ second_anime, old }) => {
         .special{
           padding-right: 3em;
           margin-left: 4em;
+        }
+        /* ipad - pc */
+        @media screen and (min-width: 768px) {
+          .profile-text-occupation{
+            margin: 24px 0;
+          }
+          .profile-text-wrap{
+            margin: 0;
+            text-align: inherit;
+          }
         }
       `}</style>
     </>

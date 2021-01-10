@@ -80,15 +80,13 @@ const Text: React.FC<TextProps> = ({ theme = [], children, style = '' }) => {
             display: inline-block;
             height: 22px;
             line-height: 22px;
-            margin: 8px 0 16px 16px;
+            margin: 8px 0 0 16px;
             padding: 0 1em;
             background-color: #3498db;
             border-radius: 0 3px 3px 0;
             color: #fff;
             font-size: 13px;
             text-decoration: none;
-            -webkit-transition: .2s;
-            transition: .2s;
           }
           .text_tag::before{
             position: absolute;
@@ -100,8 +98,6 @@ const Text: React.FC<TextProps> = ({ theme = [], children, style = '' }) => {
             border-color: transparent #3498db transparent transparent;
             border-style: solid;
             border-width: 11px 11px 11px 0;
-            -webkit-transition: .2s;
-            transition: .2s;
           }
           .text_tag::after {
             position: absolute;
