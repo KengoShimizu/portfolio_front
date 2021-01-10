@@ -3,6 +3,7 @@ import MenuItem from './../molecules/MenuItem';
 import CommonStyle from './../../common/CommonStyle';
 import { ReducerContext } from '../../common/ReducerContext';
 import { Menu } from 'react-feather';
+import { useEffect } from 'react';
 
 const MenuNav: React.FC = () => {
   const { state, dispatch } = useContext(ReducerContext);
@@ -20,9 +21,18 @@ const MenuNav: React.FC = () => {
     setHamburger(true);
   }
 
+  useEffect(() => {
+    // スクロールの固定
+    if (hamburger) {
+      document.body.setAttribute('style', 'overflow: hidden;')
+    } else {
+      document.body.removeAttribute('style')
+    }
+  }, [hamburger])
+
   return (
     <>
-      <div className='hidden-block'/>
+      {hamburger && <div className="hamburger-overlay" onClick={() => handleMenuClick(state.selected_menu ? state.selected_menu : 1)}/>}
       <div className={`hamburger ${state.second_anime && 'hamburger-anime'}`} onClick={handleHamburger}>
         <Menu size={36}/>
       </div>
@@ -43,6 +53,13 @@ const MenuNav: React.FC = () => {
         </ul>
       </nav>
       <style jsx>{`
+        .hamburger-overlay{
+          position: absolute;
+          width: 100%;
+          height: 110vh;
+          z-index: 1499;
+          backdrop-filter: blur(3px);
+        }
         .hamburger{
           position: absolute;
           right: 8px;
@@ -65,12 +82,9 @@ const MenuNav: React.FC = () => {
         }
         /* ipad - pc */
         @media screen and (min-width: 768px) {
-          .hamburger{
+          .hamburger,
+          .hamburger-overlay{
             display: none;
-          }
-          .hidden-block{
-            width: 100%;
-            height: 112px;
           }
           .navigarion-wrap{
             position: absolute;
