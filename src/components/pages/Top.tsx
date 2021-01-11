@@ -16,7 +16,7 @@ const Top: React.FC = (props: any) => {
 
   const fetchSkillsData = async (subscribe?: boolean) => {
     try {
-      const res = await fetch('http://localhost:4000/api/v1/user/skills')
+      const res = await fetch(process.env.REACT_APP_API_END_POINT + 'api/v1/user/skills')
         .then(res => res.json());
       if (!subscribe) setSkills(res);
     } catch (e) {
@@ -26,7 +26,7 @@ const Top: React.FC = (props: any) => {
 
   const fetchWorksData = async (subscribe?: boolean) => {
     try {
-      const res = await fetch('http://localhost:4000/api/v1/user/works')
+      const res = await fetch(process.env.REACT_APP_API_END_POINT + 'api/v1/user/works')
         .then(res => res.json());
       if (!subscribe) setWorks(res);
     } catch (e) {
