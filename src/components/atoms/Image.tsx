@@ -1,6 +1,4 @@
 import React from 'react';
-// common
-import CommonStyle from './../../common/CommonStyle';
 
 interface ImageProps {
   theme?: ImageThemes[];

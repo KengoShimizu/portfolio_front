@@ -40,7 +40,7 @@ const WorkCard: React.FC<WorkCardProps> = ({ work }) => {
             >{data.content}</Text>
           )}
           <Text theme={[TextThemes.MT20]}>{work.description}</Text>
-          <a href={work.url} target="_blank" rel="noopener" className="work-url">{work.url}</a>
+          <a href={work.url} target="_blank" rel="noopener noreferrer" className="work-url">{work.url}</a>
         </div>
       </div>
       <style jsx>{`

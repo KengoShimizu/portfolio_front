@@ -1,6 +1,6 @@
 import React from 'react';
-import Input, { InputThemes } from './../atoms/Input';
-import TextArea, { TextAreaThemes } from './../atoms/TextArea';
+import Input from './../atoms/Input';
+import TextArea from './../atoms/TextArea';
 import Button, { ButtonThemes } from './../atoms/Button';
 import Text, { TextThemes } from './../atoms/Text';
 import CommonStyle from '../../common/CommonStyle';

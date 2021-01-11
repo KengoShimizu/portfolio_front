@@ -10,9 +10,9 @@ const SnsBar: React.FC<SnsBarProps> = ({ second_anime }) => {
   return (
     <>
       <div className={`sns-bar ${second_anime && 'anime'}`}>
-        <a href="https://twitter.com/kengoPman" target="_blank" rel="noopener"><Twitter size={36} color={CommonStyle.BorderGray}/></a>
-        <a href="https://www.instagram.com/kungfu_kengo/" target="_blank" rel="noopener"><Instagram size={36} color={CommonStyle.BorderGray}/></a>
-        <a href="https://github.com/KengoShimizu" target="_blank" rel="noopener"><GitHub size={36} color={CommonStyle.BorderGray}/></a>
+        <a href="https://twitter.com/kengoPman" target="_blank" rel="noopener noreferrer"><Twitter size={36} color={CommonStyle.BorderGray}/></a>
+        <a href="https://www.instagram.com/kungfu_kengo/" target="_blank" rel="noopener noreferrer"><Instagram size={36} color={CommonStyle.BorderGray}/></a>
+        <a href="https://github.com/KengoShimizu" target="_blank" rel="noopener noreferrer"><GitHub size={36} color={CommonStyle.BorderGray}/></a>
       </div>
       <style jsx>{`
         .sns-bar{

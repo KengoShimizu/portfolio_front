@@ -1,7 +1,6 @@
 import React from 'react';
 // common
-import CommonStyle from './../../common/CommonStyle';
-import Text, { TextThemes } from './Text';
+import Text from './Text';
 
 interface TextAreaProps {
   theme?: TextAreaThemes[];
