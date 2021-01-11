@@ -10,9 +10,15 @@ const MenuNav: React.FC = () => {
   const [ hamburger, setHamburger ] = useState(false);
 
   const handleMenuClick = (menu_item: number) => {
+    let page = 'about';
+    if (menu_item === 2) page = 'skills';
+    else if (menu_item === 3) page = 'works';
+    else if (menu_item === 4) page = 'contact';
+
     dispatch({
       type: 'menu_select',
-      selected_menu: menu_item
+      selected_menu: menu_item,
+      page: page
     })
     setHamburger(false);
   }

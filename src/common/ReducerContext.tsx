@@ -10,6 +10,7 @@ type ContextType = {
 const initialState = { 
   initial_animation: false,
   selected_menu: 1,
+  page: 'about',
   second_anime: false,
 };
 

@@ -7,6 +7,7 @@ import { RouteName } from './common/Const';
 import { ReducerProvider } from './common/ReducerContext';
 // components
 import Top from './components/pages/Top';
+import NotFound from './components/pages/NotFound';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <ReducerProvider>
           <Switch>
             <Route exact path={RouteName.ROOT} component={Top} />
+            <Route component={NotFound} />
           </Switch>
         </ReducerProvider>
       </BrowserRouter>

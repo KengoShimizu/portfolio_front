@@ -2,7 +2,7 @@ import React from 'react';
 import Text, { TextThemes } from './../atoms/Text';
 import CommonStyle from './../../common/CommonStyle';
 import Work from './../../types/Work';
-import Image from './../atoms/Image';
+import Image, { ImageThemes } from './../atoms/Image';
 
 interface WorkCardProps {
   work: Work;
@@ -12,7 +12,8 @@ const WorkCard: React.FC<WorkCardProps> = ({ work }) => {
 
   const work_title = `
     font-size: ${CommonStyle.TextMiddleLarge};
-    margin-bottom: 
+    margin-bottom: 4px;
+    ${window.innerWidth < 768 ? 'text-align: center;' : ''}
   `;
 
   let img_ratio = 1.5;
@@ -26,10 +27,11 @@ const WorkCard: React.FC<WorkCardProps> = ({ work }) => {
           src={work.image} 
           height={275*img_ratio}
           width={500*img_ratio} 
-          alt={work.name}/>
+          alt={work.name}
+          theme={[ImageThemes.TA_CENTER]}/>
         <div className="work-card_sentenses">
           <Text 
-            theme={[TextThemes.BOLD, TextThemes.MT20, TextThemes.CUSTOM, TextThemes.CENTER]} 
+            theme={[TextThemes.BOLD, TextThemes.MT20, TextThemes.CUSTOM]} 
             style={work_title}>
             {work.name}
           </Text>

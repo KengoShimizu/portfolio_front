@@ -8,11 +8,15 @@ import Works from './../organisms/Works';
 import Contact from './../organisms/Contact';
 import Skill from './../../types/Skill';
 import Work from './../../types/Work';
+import queryString from 'query-string';
+import { QsToNumber } from './../../common/Function';
 
 const Top: React.FC = (props: any) => {
-  const { state } = useContext(ReducerContext);
+  const { state, dispatch } = useContext(ReducerContext);
   const [skills, setSkills] = useState<Skill[]>([]);
   const [works, setWorks] = useState<Work[]>([]);
+  const [initDisplay, setInitDisplay] = useState(false);
+  const qs = queryString.parse(props.location.search);
 
   const fetchSkillsData = async (subscribe?: boolean) => {
     try {
@@ -41,24 +45,47 @@ const Top: React.FC = (props: any) => {
     const cleanup = () => {
       subscribe = true;
     };
+    if (qs.page === 'skills' || qs.page === 'works' || qs.page === 'contact' && qs.page !== null && !Array.isArray(qs.page)) {
+      dispatch({
+        type: 'menu_select',
+        selected_menu: QsToNumber(qs.page),
+        page: qs.page === undefined ? 'about' : qs.page 
+      })
+      dispatch({
+        type: 'initial_anime',
+        initial_animation: true
+      })
+      dispatch({
+        type: 'second_anime_start',
+        second_anime: true
+      })
+      setInitDisplay(true);
+      setTimeout(() => {
+        setInitDisplay(false);
+      }, 100)
+    }
     return cleanup;
   }, [])
+
+  useEffect(() => {
+    window.history.pushState(null, '',`?page=${state.page}`);
+  }, [state.page])
 
   return (
     <>
       <MenuNav />
       {/* 初期アニメーションで見せたくない部分を隠すため */}
       <div className='initial-preventer'/>
-      <div className={`common ${state.selected_menu === 1 ? 'appear' : 'disappear'}`}>
+      <div className={`common ${state.selected_menu === 1 ? 'appear' : 'disappear'} ${state.selected_menu !== 1 && initDisplay && window.innerWidth >= 768 ? 'dis-none' : ''}`}>
         <ProfileCard />
       </div>
-      <div className={`common ${state.selected_menu === 2 ? 'appear' : 'disappear'}`}>
+      <div className={`common ${state.selected_menu === 2 ? 'appear' : 'disappear'} ${state.selected_menu !== 2 && initDisplay && window.innerWidth >= 768 ? 'dis-none' : ''}`}>
         <Skills skills={skills} />
       </div>
-      <div className={`common ${state.selected_menu === 3 ? 'appear' : 'disappear'}`}>
+      <div className={`common ${state.selected_menu === 3 ? 'appear' : 'disappear'} ${state.selected_menu !== 3 && initDisplay && window.innerWidth >= 768 ? 'dis-none' : ''}`}>
         <Works works={works} />
       </div>
-      <div className={`common ${state.selected_menu === 4 ? 'appear' : 'disappear'}`}>
+      <div className={`common ${state.selected_menu === 4 ? 'appear' : 'disappear'} ${state.selected_menu !== 4 && initDisplay && window.innerWidth >= 768 ? 'dis-none' : ''}`}>
         <Contact />
       </div>
       <style jsx>{`
@@ -70,8 +97,11 @@ const Top: React.FC = (props: any) => {
           z-index: 100;
         }
         .disappear{
-          ${window.innerWidth < 768 ? 'display: none;' : 'display: block;'};
+          display: none;
           z-index: 50;
+        }
+        .dis-none{
+          display: none !important;
         }
         /* ipad - pc */
         @media screen and (min-width: 768px) {
@@ -96,6 +126,7 @@ const Top: React.FC = (props: any) => {
             animation-name: animation-appear;
           }
           .disappear{
+            display: block;
             z-index: 50;
             animation-duration: ${CommonStyle.Transition};
             animation-fill-mode: forwards;
@@ -123,7 +154,7 @@ const Top: React.FC = (props: any) => {
           }
           100% {
             top: -3000px;
-            left: -3000px;
+            left: -1000px;
           }
         }
       `}</style>
