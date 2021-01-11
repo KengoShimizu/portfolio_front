@@ -73,22 +73,27 @@ const Top: React.FC = (props: any) => {
 
   return (
     <>
-      <MenuNav />
-      {/* 初期アニメーションで見せたくない部分を隠すため */}
-      <div className='initial-preventer'/>
-      <div className={`common ${state.selected_menu === 1 ? 'appear' : 'disappear'} ${state.selected_menu !== 1 && initDisplay && window.innerWidth >= 768 ? 'dis-none' : ''}`}>
-        <ProfileCard />
-      </div>
-      <div className={`common ${state.selected_menu === 2 ? 'appear' : 'disappear'} ${state.selected_menu !== 2 && initDisplay && window.innerWidth >= 768 ? 'dis-none' : ''}`}>
-        <Skills skills={skills} />
-      </div>
-      <div className={`common ${state.selected_menu === 3 ? 'appear' : 'disappear'} ${state.selected_menu !== 3 && initDisplay && window.innerWidth >= 768 ? 'dis-none' : ''}`}>
-        <Works works={works} />
-      </div>
-      <div className={`common ${state.selected_menu === 4 ? 'appear' : 'disappear'} ${state.selected_menu !== 4 && initDisplay && window.innerWidth >= 768 ? 'dis-none' : ''}`}>
-        <Contact />
+      <div className="wrapper">
+        <MenuNav />
+        {/* 初期アニメーションで見せたくない部分を隠すため */}
+        <div className='initial-preventer'/>
+        <div className={`common ${state.selected_menu === 1 ? 'appear' : 'disappear'} ${state.selected_menu !== 1 && initDisplay && window.innerWidth >= 768 ? 'dis-none' : ''}`}>
+          <ProfileCard />
+        </div>
+        <div className={`common ${state.selected_menu === 2 ? 'appear' : 'disappear'} ${state.selected_menu !== 2 && initDisplay && window.innerWidth >= 768 ? 'dis-none' : ''}`}>
+          <Skills skills={skills} />
+        </div>
+        <div className={`common ${state.selected_menu === 3 ? 'appear' : 'disappear'} ${state.selected_menu !== 3 && initDisplay && window.innerWidth >= 768 ? 'dis-none' : ''}`}>
+          <Works works={works} />
+        </div>
+        <div className={`common ${state.selected_menu === 4 ? 'appear' : 'disappear'} ${state.selected_menu !== 4 && initDisplay && window.innerWidth >= 768 ? 'dis-none' : ''}`}>
+          <Contact />
+        </div>
       </div>
       <style jsx>{`
+        .wrapper{
+          overflow-x: hidden;
+        }
         .common{
           width: 100%;
         }

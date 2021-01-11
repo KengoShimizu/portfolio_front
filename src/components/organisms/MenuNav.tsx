@@ -76,7 +76,7 @@ const MenuNav: React.FC = () => {
           top: 8px;
         }
         .navigarion-wrap{
-          position: absolute;
+          position: fixed;
           z-index: 1500;
           height: 100%;
           right: -170px;
