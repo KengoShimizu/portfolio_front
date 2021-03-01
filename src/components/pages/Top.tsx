@@ -6,45 +6,23 @@ import CommonStyle from '../../common/CommonStyle';
 import Skills from './../organisms/Skills';
 import Works from './../organisms/Works';
 import Contact from './../organisms/Contact';
-import Skill from './../../types/Skill';
-import Work from './../../types/Work';
 import queryString from 'query-string';
 import { QsToNumber } from './../../common/Function';
+import skills from './../../db/skills.json';
+import works from './../../db/works.json';
+import tags from './../../db/tags.json';
 
 const Top: React.FC = (props: any) => {
   const { state, dispatch } = useContext(ReducerContext);
-  const [skills, setSkills] = useState<Skill[]>([]);
-  const [works, setWorks] = useState<Work[]>([]);
   const [initDisplay, setInitDisplay] = useState(false);
   const qs = queryString.parse(props.location.search);
 
-  const fetchSkillsData = async (subscribe?: boolean) => {
-    try {
-      const res = await fetch(process.env.REACT_APP_API_END_POINT + 'api/v1/user/skills')
-        .then(res => res.json());
-      if (!subscribe) setSkills(res);
-    } catch (e) {
-      console.log(e);
-    }
-  }
-
-  const fetchWorksData = async (subscribe?: boolean) => {
-    try {
-      const res = await fetch(process.env.REACT_APP_API_END_POINT + 'api/v1/user/works')
-        .then(res => res.json());
-      if (!subscribe) setWorks(res);
-    } catch (e) {
-      console.log(e);
-    }
-  }
+  // workのタグidからタグ詳細を取得した連想配列をnew_worksに格納
+  const new_works = works.data.map(data => {return {...data, "new_tags": [{"id": 0, "content": '0', kind: 0}]}})
+  works.data.forEach((data, i) => data.tags.forEach(tagNum => new_works[i]?.new_tags.push(tags.data[tagNum-1])))
 
   useEffect(() => {
-    let subscribe = false;
-    fetchSkillsData(subscribe)
-    fetchWorksData(subscribe)
-    const cleanup = () => {
-      subscribe = true;
-    };
+
     if (qs.page === 'skills' || qs.page === 'works' || qs.page === 'contact' && qs.page !== null && !Array.isArray(qs.page)) {
       dispatch({
         type: 'menu_select',
@@ -64,7 +42,6 @@ const Top: React.FC = (props: any) => {
         setInitDisplay(false);
       }, 100)
     }
-    return cleanup;
   }, [])
 
   useEffect(() => {
@@ -81,10 +58,10 @@ const Top: React.FC = (props: any) => {
           <ProfileCard />
         </div>
         <div className={`common ${state.selected_menu === 2 ? 'appear' : 'disappear'} ${state.selected_menu !== 2 && initDisplay && window.innerWidth >= 768 ? 'dis-none' : ''}`}>
-          <Skills skills={skills} />
+          <Skills skills={skills.data} />
         </div>
         <div className={`common ${state.selected_menu === 3 ? 'appear' : 'disappear'} ${state.selected_menu !== 3 && initDisplay && window.innerWidth >= 768 ? 'dis-none' : ''}`}>
-          <Works works={works} />
+          <Works works={new_works} />
         </div>
         <div className={`common ${state.selected_menu === 4 ? 'appear' : 'disappear'} ${state.selected_menu !== 4 && initDisplay && window.innerWidth >= 768 ? 'dis-none' : ''}`}>
           <Contact />

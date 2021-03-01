@@ -1,0 +1,131 @@
+{
+  "data": 
+  [
+    {
+      "name" : "html",
+      "kind" : 1,
+      "image" : "/skill-html.svg",
+      "level" : 9
+    },
+    {
+      "name" : "css",
+      "kind" : 1,
+      "image" : "/skill-css.svg",
+      "level" : 8
+    },
+    {
+      "name" : "javascript",
+      "kind" : 2,
+      "image" : "/skill-javascript.svg",
+      "level" : 9
+    },
+    {
+      "name" : "jquery",
+      "kind" : 2,
+      "image" : "/skill-jquery.svg",
+      "level" : 9
+    },
+    {
+      "name" : "react",
+      "kind" : 2,
+      "image" : "/skill-react.svg",
+      "level" : 9
+    },
+    {
+      "name" : "typescript",
+      "kind" : 2,
+      "image" : "/skill-typescript.svg",
+      "level" : 9
+    },
+    {
+      "name" : "node",
+      "kind" : 2,
+      "image" : "/skill-node.svg",
+      "level" : 8
+    },
+    {
+      "name" : "express",
+      "kind" : 2,
+      "image" : "/skill-express.svg",
+      "level" : 7
+    },
+    {
+      "name" : "perl",
+      "kind" : 3,
+      "image" : "/skill-perl.svg",
+      "level" : 9
+    },
+    {
+      "name" : "php",
+      "kind" : 3,
+      "image" : "/skill-php.svg",
+      "level" : 7
+    },
+    {
+      "name" : "laravel",
+      "kind" : 3,
+      "image" : "/skill-laravel.svg",
+      "level" : 8
+    },
+    {
+      "name" : "ruby",
+      "kind" : 3,
+      "image" : "/skill-ruby.svg",
+      "level" : 8
+    },
+    {
+      "name" : "rails",
+      "kind" : 3,
+      "image" : "/skill-rails.svg",
+      "level" : 8
+    },
+    {
+      "name" : "dart",
+      "kind" : 3,
+      "image" : "/skill-dart.svg",
+      "level" : 4
+    },
+    {
+      "name" : "flutter",
+      "kind" : 3,
+      "image" : "/skill-flutter.svg",
+      "level" : 4
+    },
+    {
+      "name" : "c",
+      "kind" : 4,
+      "image" : "/skill-c.svg",
+      "level" : 4
+    },
+    {
+      "name" : "java",
+      "kind" : 4,
+      "image" : "/skill-java.svg",
+      "level" : 6
+    },
+    {
+      "name" : "python",
+      "kind" : 4,
+      "image" : "/skill-python.svg",
+      "level" : 7
+    },
+    {
+      "name" : "scala",
+      "kind" : 4,
+      "image" : "/skill-scala.svg",
+      "level" : 4
+    },
+    {
+      "name" : "mysql",
+      "kind" : 5,
+      "image" : "/skill-mysql.svg",
+      "level" : 8
+    },
+    {
+      "name" : "docker",
+      "kind" : 5,
+      "image" : "/skill-docker.svg",
+      "level" : 6
+    }
+  ]
+}

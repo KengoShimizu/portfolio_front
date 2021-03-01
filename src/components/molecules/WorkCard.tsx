@@ -35,7 +35,7 @@ const WorkCard: React.FC<WorkCardProps> = ({ work }) => {
             style={work_title}>
             {work.name}
           </Text>
-          {work.tags.map((data: any, i: number) => 
+          {work.new_tags.map((data: any, i: number) => i !== 0 &&
             <Text 
               theme={[TextThemes.TAG]}
               key={i+"work"}

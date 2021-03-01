@@ -1,0 +1,32 @@
+{
+  "data":
+  [
+    {
+      "index" : 1,
+      "name" : "covEAT/こびイート",
+      "image" : "/work-coveat.png",
+      "description" : "新型コロナウイルスの対策店舗を検索できるサービスです。エンジニア2人、デザイナー1人の計3人で1ヶ月で作成しました。お店掲載数は100件を超えています。",
+      "member" : 3,
+      "url" : "https://www.coveat.work/about",
+      "tags" : [1,2,3,4,7,8]
+    },
+    {
+      "index" : 2,
+      "name" : "アーチャー伝説攻略板",
+      "image" : "/work-archer.png",
+      "description" : "「アーチャー伝説」というスマホゲームアプリのマルチプレイ募集用掲示板サービスです。月間最高ページビュー数は8万に達し、nend広告掲載による月間最高収益は1000円に達しました。",
+      "member" : 1,
+      "url" : "https://archer-duo.herokuapp.com/",
+      "tags" : [1,2,3,4,5]
+    },
+    {
+      "index" : 3,
+      "name" : "Dig-U-Out",
+      "image" : "/work-diguout.png",
+      "description" : "登録者数が少なく他の配信者に埋まっているYoutuberをランダムに探すことができるサービスです。ジャンルと登録者数で絞りランダムでチャンネルに訪問できます。",
+      "member" : 1,
+      "url" : "https://dig-u-out.herokuapp.com/",
+      "tags" : [1,2,3,4,6]
+    }
+  ]
+}

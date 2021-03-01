@@ -1,0 +1,45 @@
+{
+  "data" : 
+  [
+    {
+      "id" : 1,
+      "content" : "HTML5",
+      "kind" : 1
+    },
+    {
+      "id" : 2,
+      "content" : "CSS3",
+      "kind" : 1
+    },
+    {
+      "id" : 3,
+      "content" : "React",
+      "kind" : 2
+    },
+    {
+      "id" : 4,
+      "content" : "TypeScript",
+      "kind" : 2
+    },
+    {
+      "id" : 5,
+      "content" : "Express",
+      "kind" : 3
+    },
+    {
+      "id" : 6,
+      "content" : "Laravel",
+      "kind" : 3
+    },
+    {
+      "id" : 7,
+      "content" : "Ruby on Rails",
+      "kind" : 3
+    },
+    {
+      "id" : 8,
+      "content" : "Docker",
+      "kind" : 4
+    }
+  ]
+}
